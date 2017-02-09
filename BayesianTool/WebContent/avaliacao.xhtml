@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    	
+    	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+    	<script src="js/jquery.min.js"></script>
+    	<script src="css/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+    	<link href="css/style.css"	rel="stylesheet"/>	
+		<title><ui:insert name="title"></ui:insert></title>		
+</h:head>
+<body>
+	<ui:composition template="/index.xhtml">
+	<ui:define name="header">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar-brand" >S.I.RI.US - Sistema de Identificação de Riscos Universais</p>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <h:form class="navbar-form navbar-right">
+            <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+					<h:commandButton styleClass="btn btn-primary pull-right " 
+									 value="Log out"
+									 action="#{organizacaoEditMB.logout()}"/>
+			</div>    	  			
+  			</div>
+          </h:form>
+        </div>
+      </div>
+    </div>
+    </ui:define>
+		<ui:define name="content">
+		<h:form>
+			<h4 class="page-header" align="center">Avaliação</h4>
+			<h5>Gestão</h5>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped"
+					role="progressbar" aria-valuenow="40" aria-valuemin="0"
+					aria-valuemax="100"
+					style="width:#{projetoEditMB.projeto.avaliacaoGestao}%">
+					#{projetoEditMB.projeto.avaliacaoGestao}</div>
+			</div>
+			<h5>Cultural</h5>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped"
+					role="progressbar" aria-valuenow="40" aria-valuemin="0"
+					aria-valuemax="100"
+					style="width:#{projetoEditMB.projeto.avaliacaoCultural}%">
+					#{projetoEditMB.projeto.avaliacaoCultural}</div>
+			</div>
+			<h5>Econômico</h5>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped"
+					role="progressbar" aria-valuenow="40" aria-valuemin="0"
+					aria-valuemax="100"
+					style="width:#{projetoEditMB.projeto.avaliacaoEconomico}%">
+					#{projetoEditMB.projeto.avaliacaoEconomico}</div>
+			</div>
+			<h5>Requisitos</h5>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped"
+					role="progressbar" aria-valuenow="40" aria-valuemin="0"
+					aria-valuemax="100"
+					style="width:#{projetoEditMB.projeto.avaliacaoRequisito}%">
+					#{projetoEditMB.projeto.avaliacaoRequisito}</div>
+			</div>
+			<h5>Aplicação</h5>
+			<div class="progress">
+				<div class="progress-bar progress-bar-success progress-bar-striped"
+					role="progressbar" aria-valuenow="40" aria-valuemin="0"
+					aria-valuemax="100"
+					style="width:#{projetoEditMB.projeto.avaliacaoAplicacao}%">
+					#{projetoEditMB.projeto.avaliacaoAplicacao}</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2">
+					<h:commandButton styleClass="btn btn-primary pull-left"
+						value="Reavaliar projeto" action="#{projetoEditMB.reavaliar()}" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2">
+					<h:commandButton styleClass="btn btn-primary pull-right"
+						value="Novo projeto" action="#{projetoEditMB.novoProjeto()}" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2">
+					<h:commandButton styleClass="btn btn-primary pull-right"
+						value="Listar Projeto" action="#{organizacaoEditMB.resetarProjetos()}" />
+				</div>
+			</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
