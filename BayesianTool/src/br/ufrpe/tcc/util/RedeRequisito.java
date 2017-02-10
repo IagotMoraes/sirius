@@ -10,12 +10,12 @@ public class RedeRequisito extends RedeBayesiana{
 	InferenceGraphNode complexidadeReq;
 	InferenceGraphNode riscoRequisitos;
 	public RedeRequisito() {
-		// Setar nós da rede Bayesiana
+		// Setar nos da rede Bayesiana
 
 		estabilidadeReq = createNode(ig, "estabilidadeRequisitos", 
-				new String[] {"ER Muito Baixa", "ER Baixa", "ER Média", "ER Alta", "ER Muito Alta"});
+				new String[] {"ER Muito Baixa", "ER Baixa", "ER Media", "ER Alta", "ER Muito Alta"});
 		complexidadeReq = createNode(ig, "complexidadeRequisitos", 
-				new String[] {"CR Muito Baixa", "CR Baixa", "CR Média", "CR Alta", "CR Muito Alta"});
+				new String[] {"CR Muito Baixa", "CR Baixa", "CR Media", "CR Alta", "CR Muito Alta"});
 
 
 
@@ -26,13 +26,13 @@ public class RedeRequisito extends RedeBayesiana{
 		//Estabilidade dos requisitos
 		setProbabilityValues(riscoRequisitos, "ER Muito Baixa", .5008, .4992);
 		setProbabilityValues(riscoRequisitos, "ER Baixa", .6659, .3341);
-		setProbabilityValues(riscoRequisitos, "ER Média", .6431, .3569);
+		setProbabilityValues(riscoRequisitos, "ER Media", .6431, .3569);
 		setProbabilityValues(riscoRequisitos, "ER Alta", .598, .402);
 		setProbabilityValues(riscoRequisitos, "ER Muito Alta", .0001, .9999);
 		//Complexidade dos requisitos
 		setProbabilityValues(riscoRequisitos, "CR Muito Baixa", .0001, .9999);
 		setProbabilityValues(riscoRequisitos, "CR Baixa", .598, .402);
-		setProbabilityValues(riscoRequisitos, "CR Média", .4997, .5003);
+		setProbabilityValues(riscoRequisitos, "CR Media", .4997, .5003);
 		setProbabilityValues(riscoRequisitos, "CR Alta", .8, .2);
 		setProbabilityValues(riscoRequisitos, "CR Muito Alta", .9999, .0001);
 

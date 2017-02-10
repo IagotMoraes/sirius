@@ -10,14 +10,14 @@ public class RedeEconomico extends RedeBayesiana{
 	InferenceGraphNode dependenciaExterna;
 	InferenceGraphNode riscoEconomico;
 	public RedeEconomico() {
-		// Setar nós da rede Bayesiana
+		// Setar nos da rede Bayesiana
 		
 		//Categoria - Recursos
 		disponibilidadeRecursos = createNode(ig, "DisponibilidadeRecursos", 
-				new String[] {"DR Muito Baixa", "DR Baixa", "DR Média", "DR Alta", "DR Muito Alta"});
+				new String[] {"DR Muito Baixa", "DR Baixa", "DR Media", "DR Alta", "DR Muito Alta"});
 		//Categoria - Contratual
 		dependenciaExterna = createNode(ig, "DependenciaExterna",
-				new String[] {"DE Muito Baixa","DE Baixa", "DE Média", "DE Alta", "DE Muito Alta"});
+				new String[] {"DE Muito Baixa","DE Baixa", "DE Media", "DE Alta", "DE Muito Alta"});
 		riscoEconomico = createNode(ig, "RiscoEconomico",new String[]{"Ocorre risco", "Nao Ocorre"} );
 		
 		ig.create_arc(disponibilidadeRecursos, riscoEconomico);
@@ -26,7 +26,7 @@ public class RedeEconomico extends RedeBayesiana{
 		//disponibilidade de recursos
 		setProbabilityValues(riscoEconomico, "DR Muito Baixa", .999, .001);
 		setProbabilityValues(riscoEconomico, "DR Baixa", .0001, .9999);
-		setProbabilityValues(riscoEconomico, "DR Média", .5377, .4623);
+		setProbabilityValues(riscoEconomico, "DR Media", .5377, .4623);
 		setProbabilityValues(riscoEconomico, "DR Alta", .6655, .3345);
 		setProbabilityValues(riscoEconomico, "DR Muito Alta", .999, .001);
 
@@ -34,7 +34,7 @@ public class RedeEconomico extends RedeBayesiana{
 		//dependencia externa
 		setProbabilityValues(riscoEconomico, "DE Muito Baixa", .4997, .5003);
 		setProbabilityValues(riscoEconomico, "DE Baixa", .5377, .4623);
-		setProbabilityValues(riscoEconomico, "DE Média", .9995, .0005);
+		setProbabilityValues(riscoEconomico, "DE Media", .9995, .0005);
 		setProbabilityValues(riscoEconomico, "DE Alta", .5984, .4016);
 		setProbabilityValues(riscoEconomico, "DE Muito Alta", .5001, .4999);
 

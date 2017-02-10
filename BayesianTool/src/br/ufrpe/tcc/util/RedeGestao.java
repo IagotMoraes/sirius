@@ -12,11 +12,11 @@ public class RedeGestao extends RedeBayesiana{
 	InferenceGraphNode complexidadeProj;
 	InferenceGraphNode riscoGestao;
 	public RedeGestao() {
-		// Setar nós da rede Bayesiana
+		// Setar nos da rede Bayesiana
 
 		//Categoria - sistema de desenvolvimento
 		tamanhoProj = createNode(ig, "TamanhoProjeto", new String[] {"Ate 50 mil", "entre 50 mil e 150 mil","entre 150 mil e 1 milhao", "entre 1 milhão e 3 milhões", "mais de 3 milhões"});
-		complexidadeProj = createNode(ig, "ComplexidadeProjeto", new String[]{"Muito Baixa", "Baixa", "Média","Alta", "Muito Alta"});		
+		complexidadeProj = createNode(ig, "ComplexidadeProjeto", new String[]{"Muito Baixa", "Baixa", "Media","Alta", "Muito Alta"});		
 		riscoGestao = createNode(ig, "RiscoGestao",new String[]{"Ocorre risco","Não Ocorre"} );
 
 
@@ -37,7 +37,7 @@ public class RedeGestao extends RedeBayesiana{
 		//Complexidade do projeto
 		setProbabilityValues(riscoGestao,"Muito Baixa", .0001, .9999);
 		setProbabilityValues(riscoGestao,"Baixa", .501, .499);
-		setProbabilityValues(riscoGestao,"Média", .312, .688); 
+		setProbabilityValues(riscoGestao,"Media", .312, .688); 
 		setProbabilityValues(riscoGestao,"Alta", .6366, .3634); 
 		setProbabilityValues(riscoGestao,"Muito Alta", .0001, .9999);
 

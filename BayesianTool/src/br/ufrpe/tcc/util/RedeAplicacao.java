@@ -11,13 +11,13 @@ public class RedeAplicacao extends RedeBayesiana{
 	InferenceGraphNode riscoAplicacao;
 	
 	public RedeAplicacao() {
-		// Setar nós da rede Bayesiana
+		// Setar nos da rede Bayesiana
 		
 		//Categoria - Design
 		nivelReuso = createNode(ig, "NivelReuso", 
-				new String[] {"NR Muito Baixa", "NR Baixa", "NR Média", "NR Alta", "NR Muito Alta"});
+				new String[] {"NR Muito Baixa", "NR Baixa", "NR Media", "NR Alta", "NR Muito Alta"});
 		nivelInterface = createNode(ig, "NivelInterface", 
-				new String[] {"NI Muito Baixa", "NI Baixa", "NI Média", "NI Alta", "NI Muito Alta"});		
+				new String[] {"NI Muito Baixa", "NI Baixa", "NI Media", "NI Alta", "NI Muito Alta"});		
 		riscoAplicacao = createNode(ig, "RiscoAplicacao",
 				new String[]{"Ocorre risco", "Nao Ocorre"} );
 		
@@ -33,13 +33,13 @@ public class RedeAplicacao extends RedeBayesiana{
 
 		setProbabilityValues(riscoAplicacao, "NR Muito Baixa", .0001, .9999);
 		setProbabilityValues(riscoAplicacao, "NR Baixa", .5549, .4451);
-		setProbabilityValues(riscoAplicacao, "NR Média", .4614, .5386);
+		setProbabilityValues(riscoAplicacao, "NR Media", .4614, .5386);
 		setProbabilityValues(riscoAplicacao, "NR Alta", .5549, .4451);
 		setProbabilityValues(riscoAplicacao, "NR Muito Alta", .0001, .9999);
 
 		setProbabilityValues(riscoAplicacao, "NI Muito Baixa", .0001, .9999);
 		setProbabilityValues(riscoAplicacao, "NI Baixa", .4994, .5006);
-		setProbabilityValues(riscoAplicacao, "NI Média", .4994, .5006);
+		setProbabilityValues(riscoAplicacao, "NI Media", .4994, .5006);
 		setProbabilityValues(riscoAplicacao, "NI Alta", .5, .5);
 		setProbabilityValues(riscoAplicacao, "NI Muito Alta", .3986, .6014);
 	}

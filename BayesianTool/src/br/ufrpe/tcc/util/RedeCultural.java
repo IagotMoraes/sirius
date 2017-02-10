@@ -10,12 +10,12 @@ public class RedeCultural extends RedeBayesiana{
 	InferenceGraphNode nivelConflito;
 	InferenceGraphNode riscoCultural;
 	public RedeCultural() {
-		// Setar nós da rede Bayesiana
+		// Setar nos da rede Bayesiana
 		
 		distribuicaoGeografica = createNode(ig, "distribuicaoGeografica", 
 				new String[]{"Mesma sala", "Mesmo predio", "Mesma cidade", "Estado diferentes", "Países diferentes"});
 		nivelConflito = createNode(ig, "nivelConflito", 
-				new String[] {"Muito Baixa", "Baixa", "Média", "Alta", "Muito Alta"});
+				new String[] {"Muito Baixa", "Baixa", "Media", "Alta", "Muito Alta"});
 		riscoCultural = createNode(ig, "riscoCultural",new String[]{"Ocorre risco", "Nao Ocorre"} );
 		
 		ig.create_arc(distribuicaoGeografica, riscoCultural);
@@ -29,7 +29,7 @@ public class RedeCultural extends RedeBayesiana{
 				
 		setProbabilityValues(riscoCultural, "Muito Baixa", .1665, .8335);
 		setProbabilityValues(riscoCultural, "Baixa", .3072, .6928);
-		setProbabilityValues(riscoCultural, "Média", .1252, .8778);
+		setProbabilityValues(riscoCultural, "Media", .1252, .8778);
 		setProbabilityValues(riscoCultural, "Alta", .0001, .9999);
 		setProbabilityValues(riscoCultural, "Muito Alta", .999, .001);
 
