@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    	
+    	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+    	<script src="js/jquery.min.js"></script>
+    	<script src="css/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+    	<link href="css/style.css"	rel="stylesheet"/>	
+		<title><ui:insert name="title"></ui:insert></title>		
+</h:head>
+<body>				
+    <ui:composition template="/index.xhtml">
+    <ui:define name="header">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar-brand" >S.I.RI.US - Sistema de Identificação de Riscos Universais</p>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <h:form class="navbar-form navbar-right">
+            <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+					<h:commandButton styleClass="btn btn-primary pull-right " 
+									 value="Log out"
+									 action="#{organizacaoEditMB.logout()}"/>
+			</div>    	  			
+  			</div>
+          </h:form>
+        </div>
+      </div>
+    </div>
+    </ui:define>
+    	<ui:define name="content">
+    	<h4 class="page-header" align="center">Inserir Projeto</h4>
+    		<h:form styleClass="form-horizontal" >
+    		<div class="form-group">
+	    		<label class="col-sm-2 control-label">Nome do Projeto:</label>
+	    		<div class="col-sm-10">
+	      			<h:inputText styleClass="form-control" 
+	      						 value="#{projetoEditMB.projeto.nome}" 
+	      						 p:placeholder="Projeto"/>
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-2 control-label">Nome do Responsável:</label>
+	    		<div class="col-sm-10">
+	      			<h:inputText styleClass="form-control" 
+	      						 value="#{projetoEditMB.projeto.responsavel}" 
+	      						 p:placeholder="Responsavel"/>
+	    		</div>
+	  		</div>
+			<div class="form-group">
+	    		<label class="col-sm-3 control-label">Tamanho do projeto:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-12" value="#{projetoEditMB.projeto.tamanhoProj}">
+	      				<f:selectItem itemValue="Ate 50 mil" itemLabel="Ate 50 mil"/>
+	      				<f:selectItem itemValue="entre 50 mil e 150 mil" itemLabel=" 50 mil à 150 mil"/>
+	      				<f:selectItem itemValue="entre 150 mil e 1 milhao" itemLabel=" 150 mil à 1 milhao"/>
+	      				<f:selectItem itemValue="entre 1 milhão e 3 milhões" itemLabel=" 1 milhão à 3 milhões"/>
+	      				<f:selectItem itemValue="mais de 3 milhões" itemLabel=" mais de 3 milhões"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Complexidade do projeto:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-7" value="#{projetoEditMB.projeto.complexidadeProj}">
+	      				<f:selectItem itemValue="Muito Baixa" itemLabel="Muito Baixa"/>
+	      				<f:selectItem itemValue="Baixa" itemLabel="Baixa"/>
+	      				<f:selectItem itemValue="Média" itemLabel="Média"/>
+	      				<f:selectItem itemValue="Alta" itemLabel="Alta"/>
+	      				<f:selectItem itemValue="Muito Alta" itemLabel="Muito Alta"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Distribuição Geografica:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-12" value="#{projetoEditMB.projeto.distribuicaoGeografica}">
+	      				<f:selectItem itemValue="Mesma sala" itemLabel="Mesma sala"/>
+	      				<f:selectItem itemValue="Mesmo predio" itemLabel="Mesmo predio"/>
+	      				<f:selectItem itemValue="Mesma cidade" itemLabel="Mesma cidade"/>
+	      				<f:selectItem itemValue="Estado diferentes" itemLabel="Estado diferentes"/>
+	      				<f:selectItem itemValue="Países diferentes" itemLabel="Países diferentes"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Nível Conflito:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-7" value="#{projetoEditMB.projeto.nivelConflito}">
+	      				<f:selectItem itemValue="Muito Baixa" itemLabel="Muito Baixa"/>
+	      				<f:selectItem itemValue="Baixa" itemLabel="Baixa"/>
+	      				<f:selectItem itemValue="Média" itemLabel="Média"/>
+	      				<f:selectItem itemValue="Alta" itemLabel="Alta"/>
+	      				<f:selectItem itemValue="Muito Alta" itemLabel="Muito Alta"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Disponibilidade de Recursos:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-7" value="#{projetoEditMB.projeto.disponibilidadeRecursos}">
+	      				<f:selectItem itemValue="DR Muito Baixa" itemLabel="Muito Baixa"/>
+	      				<f:selectItem itemValue="DR Baixa" itemLabel="Baixa"/>
+	      				<f:selectItem itemValue="DR Média" itemLabel="Média"/>
+	      				<f:selectItem itemValue="DR Alta" itemLabel="Alta"/>
+	      				<f:selectItem itemValue="DR Muito Alta" itemLabel="Muito Alta"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Dependencia Externa:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-7" value="#{projetoEditMB.projeto.dependenciaExterna}">
+	      				<f:selectItem itemValue="DE Muito Baixa" itemLabel="Muito Baixa"/>
+	      				<f:selectItem itemValue="DE Baixa" itemLabel="Baixa"/>
+	      				<f:selectItem itemValue="DE Média" itemLabel="Média"/>
+	      				<f:selectItem itemValue="DE Alta" itemLabel="Alta"/>
+	      				<f:selectItem itemValue="DE Muito Alta" itemLabel="Muito Alta"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Estabilidade dos Requisitos:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-7" value="#{projetoEditMB.projeto.estabilidadeRequisitos}">
+	      				<f:selectItem itemValue="ER Muito Baixa" itemLabel="Muito Baixa"/>
+	      				<f:selectItem itemValue="ER Baixa" itemLabel="Baixa"/>
+	      				<f:selectItem itemValue="ER Média" itemLabel="Média"/>
+	      				<f:selectItem itemValue="ER Alta" itemLabel="Alta"/>
+	      				<f:selectItem itemValue="ER Muito Alta" itemLabel="Muito Alta"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Complexidade dos Requisitos:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-7" value="#{projetoEditMB.projeto.complexidadeRequisitos}">
+	      				<f:selectItem itemValue="CR Muito Baixa" itemLabel="Muito Baixa"/>
+	      				<f:selectItem itemValue="CR Baixa" itemLabel="Baixa"/>
+	      				<f:selectItem itemValue="CR Média" itemLabel="Média"/>
+	      				<f:selectItem itemValue="CR Alta" itemLabel="Alta"/>
+	      				<f:selectItem itemValue="CR Muito Alta" itemLabel="Muito Alta"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Nível de Reuso:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-7" value="#{projetoEditMB.projeto.nivelReuso}">
+	      				<f:selectItem itemValue="NR Muito Baixa" itemLabel="Muito Baixa"/>
+	      				<f:selectItem itemValue="NR Baixa" itemLabel="Baixa"/>
+	      				<f:selectItem itemValue="NR Média" itemLabel="Média"/>
+	      				<f:selectItem itemValue="NR Alta" itemLabel="Alta"/>
+	      				<f:selectItem itemValue="NR Muito Alta" itemLabel="Muito Alta"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+	    		<label class="col-sm-3 control-label">Nível de Interface:</label>
+	    		<div class="col-sm-9">
+	      			<h:selectOneRadio class="col-sm-7" value="#{projetoEditMB.projeto.nivelInterface}">
+	      				<f:selectItem itemValue="NI Muito Baixa" itemLabel="Muito Baixa"/>
+	      				<f:selectItem itemValue="NI Baixa" itemLabel="Baixa"/>
+	      				<f:selectItem itemValue="NI Média" itemLabel="Média"/>
+	      				<f:selectItem itemValue="NI Alta" itemLabel="Alta"/>
+	      				<f:selectItem itemValue="NI Muito Alta" itemLabel="Muito Alta"/>
+	      			</h:selectOneRadio> 
+	    		</div>
+	  		</div>
+	  		<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-10">
+					<h:commandButton styleClass="btn btn-primary center-block" 
+									 value="Avaliar projeto"
+									 action="#{projetoEditMB.avaliar()}"/>    	  			
+    			</div>
+  			</div>
+		</h:form>  		
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
